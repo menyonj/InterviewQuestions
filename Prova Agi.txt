@@ -1,0 +1,28 @@
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+
+// Caminho para o chromedriver.exe
+PATH = "Caminho/Para/O/chromedriver.exe"
+
+// Configuração do serviço do WebDriver
+service = Service(PATH)
+service.start()
+
+// Configuração do navegador Chrome
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+
+// URL do site
+url = "https://blogdoagi.com.br/"
+driver.get(url)
+
+// Localizar o link "Crédito Consignado" e clicar nele
+try:
+    link_consignado = driver.find_element(By.LINK_TEXT, "Crédito Consignado")
+    link_consignado.click() 
+    print("Erro ao localizar ou clicar no link:", e)
+
+// Fechar o navegador
+driver.quit()
